@@ -17,10 +17,6 @@ export function getAverage(array) {
   return sum / array.length;
 }
 
-const numbers = [22, 45, 4, 65];
-const average = getAverage(numbers);
-console.log(average);
-
 /**
  * PART 2
  * Create a getStringSum(str) function that returns the sum of any integers that are in the string.
@@ -30,8 +26,12 @@ console.log(average);
 
 export function getStringSum(str) {
   // Your code goes here...
+  let sum = 0;
   for (let i = 0; i < str.length; i++) {
-    sum += str[i];
+    if (isNaN(i)) {
+      return (sum += parseInt(str[i]));
+    }
+    return sum;
   }
 }
 
